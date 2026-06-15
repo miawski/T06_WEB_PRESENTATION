@@ -430,6 +430,15 @@ figure .button {
   box-shadow: none;
 }
 
+#slide-one-preview:not([data-expanded="true"]) iframe {
+  height: min(70vh, 38rem);
+  min-height: 34rem;
+}
+
+#slide-one-preview:not([data-expanded="true"]) figcaption {
+  margin-top: clamp(0.7rem, 1.2vw, 1rem);
+}
+
 #slide-one-preview .button {
   min-height: 2.4rem;
   margin-top: 0;
@@ -739,6 +748,56 @@ html[data-embed-scrollbar="hidden"] *::-webkit-scrollbar {
   width: 0;
   height: 0;
   display: none;
+}
+
+@media (min-width: 821px) and (max-height: 880px) {
+  .slide {
+    padding: clamp(1.4rem, 3vw, 3rem);
+  }
+
+  h2 {
+    margin-bottom: 0.7rem;
+    font-size: clamp(2rem, 3.2vw, 3.4rem);
+  }
+
+  p,
+  li {
+    font-size: clamp(0.95rem, 1.08vw, 1.12rem);
+    line-height: 1.38;
+  }
+
+  .button {
+    min-height: 2.65rem;
+    margin-top: 0.55rem;
+    padding: 0.68rem 1.1rem;
+  }
+
+  #slide-2 .description,
+  #slide-3 .description {
+    margin-top: 0.7rem;
+    margin-bottom: 0.55rem;
+  }
+
+  #slide-2 .description li,
+  #slide-3 .description li {
+    margin-bottom: 0.45rem;
+  }
+
+  #slide-2 .column:first-child {
+    width: min(34rem, 42vw);
+  }
+
+  #slide-2 .column > img {
+    max-height: 76vh;
+  }
+
+  #slide-3 .grid {
+    gap: clamp(1.5rem, 3vw, 3rem);
+  }
+
+  #slide-3 .column:last-child > img {
+    max-height: 74vh;
+  }
 }
 
 @media (max-width: 820px) {
