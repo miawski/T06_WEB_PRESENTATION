@@ -35,8 +35,8 @@ function collapsePreview(shouldFocusButton = false) {
 
   slideOnePreview.removeAttribute("data-expanded");
   previewToggleButton.setAttribute("aria-expanded", "false");
-  previewToggleButton.setAttribute("aria-label", "Zoom preview");
-  previewToggleButton.textContent = "Zoom";
+  previewToggleButton.setAttribute("aria-label", "Udvid preview");
+  previewToggleButton.textContent = "";
   setPreviewScrollbarMode(false);
 
   if (shouldFocusButton) {
@@ -52,12 +52,18 @@ function expandPreview() {
   slideOnePreview.setAttribute("data-expanded", "true");
   previewToggleButton.setAttribute("aria-expanded", "true");
   previewToggleButton.setAttribute("aria-label", "Luk preview");
-  previewToggleButton.textContent = "Luk preview";
+  previewToggleButton.textContent = "";
   setPreviewScrollbarMode(true);
 }
 
 if (previewToggleButton && slideOnePreview) {
   setPreviewScrollbarMode(false);
+
+  slideOnePreview.addEventListener("click", () => {
+    if (!slideOnePreview.hasAttribute("data-expanded")) {
+      expandPreview();
+    }
+  });
 
   previewToggleButton.addEventListener("click", (event) => {
     event.stopPropagation();
@@ -77,6 +83,10 @@ if (previewToggleButton && slideOnePreview) {
     }
 
     if (event.target === previewToggleButton || previewToggleButton.contains(event.target)) {
+      return;
+    }
+
+    if (slideOnePreview.contains(event.target)) {
       return;
     }
 
