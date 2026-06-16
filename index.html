@@ -57,6 +57,9 @@
 
                   <li>Navigationen blev prioriteret tidligt, fordi brugeren hurtigt skal kunne finde temaerne, opgaveløsningerne og dokumentationen.</li>
                   <li>Den visuelle retning blev udviklet ud fra mit portfolio som afsender, så sitet både fungerer som eksamenssite og personlig præsentation.</li>
+                  <li><a href="https://www.figma.com/design/Vq9mXAjenMNeznMPfdIg5q/Portfolio-EXAM-logo-design?node-id=0-1&t=vDj2aBVUrSQJ2Hie-1" target="_blank" rel="noopener">Portfolio EXAM logo design</a></li>
+                  <li><a href="https://www.figma.com/design/qgdLE6JPuHWMklXLVaVsRG/Portfolio-Exam-Prototype-4.3-test?node-id=0-1&p=f&t=dJUqshVNZeMn5sOB-0" target="_blank" rel="noopener">Portfolio Exam Prototype 4.3 test</a></li>
+                  <li><a href="https://www.figma.com/design/nZlhZwo9l83dUnTBHynxEa/T06-WIREFRAME?node-id=0-1&t=nWwhBqqWEf4pnhfU-1" target="_blank" rel="noopener">T06 WIREFRAME</a></li>
                 </ul>
                 <p>
                   <a class="button" href="https://www.figma.com/board/bUgiCNwZRXiQELaYobu1RM/T06--EKSAMEN-dokumentation?node-id=0-1&t=VTE6gm9nlCotHGUl-1" target="_blank" rel="noopener">Åbn dokumentation</a>
@@ -93,6 +96,10 @@
                 <p>
                   <button class="button" type="button" data-open-documentation aria-expanded="false" aria-controls="slide-three-documentation">Se dokumentation</button>
                 </p>
+
+                <p>
+                  <button class="button" type="button" data-open-website aria-expanded="false" aria-controls="slide-three-website">Se website</button>
+                </p>
               </div>
 
               <div class="column">
@@ -102,7 +109,7 @@
 
             <div id="slide-three-documentation" role="dialog" aria-label="T06 dokumentation" aria-modal="true" hidden>
               <div>
-                <button class="button" type="button" data-close-documentation>Luk</button>
+                <button class="button" type="button" data-close-documentation aria-label="Luk dokumentation preview"></button>
                 <iframe src="https://embed.figma.com/board/um0sr7vUnIfXFsW8nMdepZ/T06--EKSAMEN-dokumentation--Copy-?node-id=156-1885&embed-host=share" title="T06 EKSAMEN dokumentation Copy" loading="lazy" allowfullscreen></iframe>
               </div>
             </div>
@@ -115,7 +122,7 @@
           <div class="wrap">
             <div class="grid">
               <div class="column">
-                <p class="eyebrow">Efter...</p>
+                <p class="eyebrow">Afters...</p>
                 <h2><strong>Efter udviklingen</strong></h2>
 
                 <ul class="description">
@@ -132,6 +139,8 @@
           </div>
         </section>
 
+        <!-- slide 5 -->
+
         <section class="slide" id="slide-5">
           <div class="wrap">
             <div class="grid">
@@ -140,19 +149,9 @@
                 <h2><strong>Afrunding og Refleksion</strong></h2>
 
                 <ul class="description">
+                  <li>Hvad har jeg lært?</li>
                   <li>Hvad har jeg overset?</li>
                   <li>hvad kunne gøres bedre?</li>
-                  <!-- <li>Navigation til tema, preview/iframe og dokumentationslink.</li> -->
-                </ul>
-                <p></p>
-                <p class="kilder">Kilder:</p>
-                <ul class="description">
-                  <li>
-                    <a href="https://github.com/webslides/webslides/" target="_blank" rel="noopener">GitHub repo: webslides</a>
-                  </li>
-                  <li>
-                    <a href="https://www.youtube.com/watch?v=uE1m21Umn0s" target="_blank" rel="noopener">YouTube guide til slide kodning</a>
-                  </li>
                 </ul>
               </div>
 
@@ -172,6 +171,29 @@
               </div>
             </div>
 
+            <footer>
+              <div>
+                <p class="kilder">Kilder:</p>
+                <ul class="description">
+                  <li>
+                    <a href="https://github.com/webslides/webslides/" target="_blank" rel="noopener">GitHub repo: webslides</a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/watch?v=uE1m21Umn0s" target="_blank" rel="noopener">YouTube guide til slide kodning</a>
+                  </li>
+                  <li>
+                    <a href="https://miawski.github.io/T06_presentation/" target="_blank" rel="noopener">Portfolio website kopi</a>
+                  </li>
+                  <li>
+                    <a href="https://www.figma.com/board/um0sr7vUnIfXFsW8nMdepZ/T06--EKSAMEN-dokumentation--Copy-?t=GaypVFWS5UGyKxh9-0" target="_blank" rel="noopener">T06 Dokumentation</a>
+                  </li>
+                  <li>
+                    <a href="https://miawski.github.io/animation_portfolio/" target="_blank" rel="noopener"> Awab's kodnings project: My Media Portfolio</a>
+                  </li>
+                </ul>
+              </div>
+            </footer>
+
             <!-- <p>
               <a href="#slide-1" class="button">Tilbage til intro</a>
             </p> -->
@@ -180,6 +202,11 @@
       </article>
     </main>
 
+    <div id="slide-three-website" role="dialog" aria-label="Portfolio website preview" aria-modal="true" hidden>
+      <button class="button" type="button" data-close-website aria-label="Luk website preview"></button>
+      <iframe data-src="https://miawski.github.io/T06_presentation/?embed=true&scrollbar=visible" title="Iframe preview af portfolio website copy" loading="lazy" allowfullscreen></iframe>
+    </div>
+
     <nav class="slide-controls" aria-label="Slide navigation">
       <button class="control-button" type="button" data-direction="prev" aria-label="Previous slide">‹</button>
       <span id="counter" aria-live="polite">1 / 5</span>
@@ -187,6 +214,6 @@
     </nav>
 
     <script src="js/main.js"></script>
-    <script src="js/iframe.js?v=documentation"></script>
+    <script src="js/iframe.js?v=website-preview"></script>
   </body>
 </html>
