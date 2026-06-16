@@ -103,3 +103,37 @@ if (previewToggleButton && slideOnePreview) {
     }
   });
 }
+
+const documentationOpenButton = document.querySelector("[data-open-documentation]");
+const documentationCloseButton = document.querySelector("[data-close-documentation]");
+const slideThreeDocumentation = document.querySelector("#slide-three-documentation");
+
+if (documentationOpenButton && documentationCloseButton && slideThreeDocumentation) {
+  documentationOpenButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    slideThreeDocumentation.hidden = false;
+    documentationOpenButton.setAttribute("aria-expanded", "true");
+  });
+
+  documentationCloseButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    slideThreeDocumentation.hidden = true;
+    documentationOpenButton.setAttribute("aria-expanded", "false");
+    documentationOpenButton.focus();
+  });
+
+  slideThreeDocumentation.addEventListener("click", (event) => {
+    if (event.target === slideThreeDocumentation) {
+      slideThreeDocumentation.hidden = true;
+      documentationOpenButton.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !slideThreeDocumentation.hidden) {
+      slideThreeDocumentation.hidden = true;
+      documentationOpenButton.setAttribute("aria-expanded", "false");
+      documentationOpenButton.focus();
+    }
+  });
+}

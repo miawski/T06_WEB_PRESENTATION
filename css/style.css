@@ -673,6 +673,7 @@ figure .button {
 /* slide 3 image layout */
 
 #slide-3 {
+  position: relative;
   place-items: center;
 }
 
@@ -718,9 +719,62 @@ figure .button {
   box-shadow: 0 16px 40px rgba(0, 122, 204, 0.22);
 }
 
+#slide-3 [data-open-documentation] {
+  appearance: none;
+  border: 0;
+  background: #007acc;
+  color: #ffffff;
+  outline: none;
+}
+
 #slide-3 .button:hover,
 #slide-3 .button:focus-visible {
   background: #0e86d4;
+}
+
+#slide-3 [data-open-documentation]:hover,
+#slide-3 [data-open-documentation]:focus-visible {
+  border: 0;
+  background: #0e86d4;
+  outline: none;
+}
+
+#slide-three-documentation {
+  position: absolute;
+  inset: 0;
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 3vw, 3rem);
+  background: rgba(5, 8, 20, 0.72);
+}
+
+#slide-three-documentation[hidden] {
+  display: none;
+}
+
+#slide-three-documentation > div {
+  width: min(90vw, 70rem);
+  height: min(82vh, 48rem);
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: var(--bg-soft);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+}
+
+#slide-three-documentation .button {
+  min-height: 2.4rem;
+  margin: 0 0 0.75rem;
+  padding: 0.55rem 1rem;
+}
+
+#slide-three-documentation iframe {
+  width: 100%;
+  height: calc(100% - 3.2rem);
+  min-height: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.85rem;
 }
 
 /* slide 4 */
